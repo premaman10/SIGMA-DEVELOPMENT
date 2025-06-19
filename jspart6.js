@@ -89,3 +89,24 @@
       }
 }
 console.log(calc.sub(20,30));
+
+//asssignment
+//q1 write a js fucntion that returns array elemnet larger than a number 
+let num = 10;
+let numbers = [10,78,9,87,54,4,3,67];
+function largerthan (num,arr) {
+ for(let n of numbers){
+   if(n>num){
+      console.log(n);
+   }
+ }
+}
+largerthan(num,numbers);
+
+//q2 write  a js function to extract y=unique character from a string
+let str = "hello world";
+function uniquechar(str) {
+   let unique = [...new Set(str)].join("");
+   console.log(unique);
+   }
+uniquechar(str);
