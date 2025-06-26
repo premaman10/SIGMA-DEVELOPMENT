@@ -84,20 +84,48 @@
 // //3. a <div> with a black border and pink background color with the followign inside of it 
 // //another <h1> that syas "I am inside div"
 // //a<p> that says "Mee TOO!"
-let para1 = document.createElement('p');//creates
-para1.innerText = "hey i am red";//text dalna
-para1.style.color = "red";//color dalna
-document.querySelector('body').append(para1);//to show it over main page
-let h3 = document.createElement('h3');//creates h3
-h3.innerText = "I am a blue h3!";//text dalna
-h3.classList.add("blue");//to put color we use classlist here
-document.querySelector("body").append(h3);//to show
-let div =  document.createElement('div');
-div.classList.add("div");
+// let para1 = document.createElement('p');//creates
+// para1.innerText = "hey i am red";//text dalna
+// para1.style.color = "red";//color dalna
+// document.querySelector('body').append(para1);//to show it over main page
+// let h3 = document.createElement('h3');//creates h3
+// h3.innerText = "I am a blue h3!";//text dalna
+// h3.classList.add("blue");//to put color we use classlist here
+// document.querySelector("body").append(h3);//to show
+// let div =  document.createElement('div');
+// div.classList.add("div");
+// let h1 = document.createElement('h1');
+// h1.innerText = "I am inside div";
+// div.append(h1);
+// let para2 = document.createElement('p');
+// para2.innerText = "Mee TOO!";
+// div.append(para2);
+// document.querySelector("body").append(div);
+
+
+//ASSIGNMENT
+
+// create a new input button element on the page using javascript only set the text  of button to "click me"
+let btn = document.createElement('button');
+let input = document.createElement('input');
+btn.innerText = "click me";
+document.querySelector("body").append(input);
+document.querySelector("body").append(btn);
+//change placeholder value of button to username
+//change id of button to btn
+btn.setAttribute("placeholder","username");
+btn.setAttribute("id","btn");
+// Access the btn using the query Selector and button id.Change the button background color to blue and text color to white
+let bt = document.querySelector("#btn");
+bt.classList.add("btnstyle");
+
+//create an h1 element on the page and set its text to “DOMPractice” underlined.Change its color to purple
 let h1 = document.createElement('h1');
-h1.innerText = "I am inside div";
-div.append(h1);
-let para2 = document.createElement('p');
-para2.innerText = "Mee TOO!";
-div.append(para2);
-document.querySelector("body").append(div);
+h1.innerHTML = "<u>DOMPractice</u>";
+h1.style.color = "purple";
+document.querySelector("body").append(h1);
+
+//create a p  tag on the page and set its text to“Apna College Delta Practice”,where Delta is bold
+let p = document.createElement('p');
+p.innerHTML = "Apna College <b> Delta </b> Practice";
+document.querySelector("body").append(p);
