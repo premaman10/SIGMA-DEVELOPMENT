@@ -34,19 +34,34 @@
 
 
 //axios updatting query strings
-let url = "https://universities.hipolabs.com/search?name=";
+let url = "http://universities.hipolabs.com/search?name=";
         let btn = document.querySelector("button");
 
         btn.addEventListener("click", async () => {
-            let country = document.querySelector("input");
-            let name = country.value;
-            getcollege(name);
+            let country = document.querySelector("input").value;
+            console.log(country);
+            let colleges = await getcollege(country);
+            // console.log(colleges);
+            show(colleges);
+            
         });
+        function show(colleges){
+            let ul = document.querySelector("ul");
+            ul.innerText="";
+         for(col of colleges)   {
+            // console.log(col.name);
+            let li = document.createElement("li");
+            li.textContent = col.name;
+            // li.textContent = col.state-province;
+            ul.appendChild(li);
+         }
+
+        }
 
         async function getcollege(country) {
             try {
                 let res = await axios.get(url + country);
-                console.log(res.data.map(college => college.name));
+                return res.data;
             } catch (e) {
                 console.log("Error - ", e);
             }
