@@ -75,6 +75,51 @@ class Person{
 // talk function is going inside prototype
 
 
-//inheritance
+//inheritance is a mechanism that allows us to create new classes on the basis of 
+//already existing classes
 
+class Studnet {//base class//parent class
+    constructor(name,age,subject){
+            this.name = name;
+            this.age = age;
+            this.subject = subject;           
+    }
+    about(){
+        console.log(`my name is ${this.name} and my age is ${this.age} and my fav subject is ${this.subject}`);
+    }
+}
+class Teacher extends Studnet{//child class
+    constructor(name,age,subject){
+            super(name,age);//it is being used to call the constructior of parent class
+            this.subject = subject;
+    }
+}
+let t1 = new Teacher("aman",21,"maths");
+t1.about();
+//overiding means if we create a same function that is there in parent and child both class 
+// than that fucntion iwll be caleed override//it is  runtime polymorphism
+//overloading means multiple methods with teh same name but different parameters inn the same class
+//it happens during compile time polymorphism
+
+// four pillars of OOPS
+
+// 1. **Encapsulation**:
+
+//    * Bundles data and methods inside a class.
+//    * Protects internal state using access modifiers (like `private`, `public`).
+
+// 2. **Inheritance**:
+
+//    * A class can inherit properties and methods from another class.
+//    * Promotes code reuse and hierarchy.
+
+// 3. **Polymorphism**:
+
+//    * Same method behaves differently based on the object (overloading & overriding).
+//    * Enables flexibility in code.
+
+// 4. **Abstraction**:
+
+//    * Hides complex details and shows only essential features.
+//    * Achieved via abstract classes and interfaces.
 
